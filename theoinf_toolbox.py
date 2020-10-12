@@ -59,7 +59,7 @@ class Grammar:
 
     @staticmethod
     def __replace_permut(s: str, old: str, new: str) -> [str]:
-        '''Separately replaces every occurence of `old` in `s` and collects each replacement in a list.'''
+        '''Separately replaces every occurrence of `old` in `s` and collects each replacement in a list.'''
         result = []
         pos = 0
         while True:
@@ -81,7 +81,7 @@ class Grammar:
                 for rhs in rhss:
                     for word in last_words:
                         if len(word) + len(rhs) - len(lhs) > max_length:
-                            break
+                            continue
                         new_words = self.__replace_permut(word, lhs, rhs)
                         for new_word in new_words:
                             if new_word not in cur_words:
